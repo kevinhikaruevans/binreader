@@ -2,6 +2,9 @@ const fs = require('graceful-fs');
 
 class BinReader {
     constructor(options) {
+        if (!options.filename) {
+            throw 'invalid filename';
+        }
         this.options = Object.assign({
             bufferSize: 1024,
             byteOrder: 'LE'
