@@ -1,0 +1,30 @@
+{
+  "name": "binreader",
+  "version": "0.0.1",
+  "description": "A basic binary reader for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinhikaruevans/binreader.git"
+  },
+  "keywords": [
+    "binary",
+    "reader",
+    "buffered",
+    "buffer",
+    "binaryreader",
+    "binreader"
+  ],
+  "author": "Kevin Evans <evans.kevinh@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevinhikaruevans/binreader/issues"
+  },
+  "homepage": "https://github.com/kevinhikaruevans/binreader#readme",
+  "dependencies": {
+    "graceful-fs": "^4.1.11"
+  }
+}
