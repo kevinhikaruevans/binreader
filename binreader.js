@@ -25,7 +25,8 @@ class BinReader {
     }
     seek(position) {
         this.position = position;
-        return this.fillBuffer();
+        return this.canRead;
+        //return this.fillBuffer();
     }
     fillBuffer() {
         const position = this.bufferPosition = this.position;
