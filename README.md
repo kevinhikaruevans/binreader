@@ -1,4 +1,4 @@
-# binaryreader
+# binreader
 
 A basic buffered binary reader for Node.js.
 
@@ -6,9 +6,9 @@ A basic buffered binary reader for Node.js.
 # Basic Examples
 
 ```js
-const BinaryReader = require('BinaryReader');
+const BinReader = require('binreader');
 
-const reader = new BinaryReader({
+const reader = new BinReader({
   filename: 'hello.dat'
 });
 
