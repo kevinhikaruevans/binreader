@@ -1,6 +1,6 @@
 {
   "name": "binreader",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A basic binary reader for Node.js",
   "main": "index.js",
   "scripts": {
