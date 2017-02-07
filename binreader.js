@@ -12,7 +12,7 @@ class BinReader {
 
         this.position = 0;
         this.bufferPosition = 0;
-        this.currentBufferSize = 0;
+        this.currentBufferSize = null;
         this.stats = fs.statSync(this.options.filename);
         this.fileDescriptor = fs.openSync(this.options.filename, 'r');
         this.buffer = Buffer.alloc(this.options.bufferSize);
@@ -25,9 +25,7 @@ class BinReader {
     }
     seek(position) {
         this.position = position;
-        this.currentBufferSize = 0;
         return this.canRead;
-        //return this.fillBuffer();
     }
     fillBuffer() {
         const position = this.bufferPosition = this.position;
@@ -44,12 +42,16 @@ class BinReader {
 
     readLE(size, signed) {
         if (!this.canRead) {
-            return -1;
+            return null;
         }
+
         if (size > 8 || size < 1) {
-            throw 'invalid params';
+            throw new Error('invalid size');
         }
-        if (!this.currentBufferSize || ((this.position - this.bufferPosition) + size) > this.buffer.length) {
+
+        if (this.currentBufferSize === null
+            || (this.position - this.bufferPosition < 0)
+            || ((this.position - this.bufferPosition) + size) > this.buffer.length) {
             this.fillBuffer();
         }
 
